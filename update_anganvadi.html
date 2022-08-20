@@ -1,0 +1,49 @@
+{% extends 'ADMIN/index.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-hover">
+
+     <tr>
+    <th scope="row">Ward number</th>
+    <td {{ data['ward_number'] }}>
+        <label for="select"></label>
+      <select name="select" id="select">
+      <option>--select--</option>
+          {% for i in data1 %}
+          <option value="{{ i['ward_id'] }}" {% if  i['ward_id']==data['ward_id']  %} selected {% endif %}>{{ i['ward_number'] }} </option>
+          {% endfor %}
+      </select></td>
+  </tr>
+    <tr>
+      <th scope="row">Anganvadi number</th>
+      <td><label for="textfield2"></label>
+      <input type="number" name="textfield2" id="textfield2"   required value="{{ data['anganvadi_number'] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <th scope="row">Anganvadi Place</th>
+      <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" required  value="{{ data['place'] }}" class="form-control"/></td>
+    </tr>
+   <tr>
+      <th scope="row">Email</th>
+      <td><label for="textfield4"></label>
+      <input type="email" name="textfield4" id="textfield4"  required value="{{ data['Email'] }}" class="form-control"/></td>
+    </tr>
+
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="Update"  class="btn btn-outline-primary"/></th>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

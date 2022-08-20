@@ -1,0 +1,31 @@
+{% extends 'ADMIN/index.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>view ward </title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="get" action="">
+  <table  class="table table-hover">
+    <tr style="background-color: #b3d7ff;color: black">
+      <th  scope="col">#</th>
+      <th scope="col">Ward number</th>
+      <th scope="col">Ward name</th>
+        <th></th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;{{ i['ward_number'] }}</td>
+      <td>{{ i['ward_name'] }}</td>
+    <td><a href="/delward/{{ i['ward_id'] }}" onclick="return confirm('Are you sure...?')" class="btn btn-outline-primary">Delete</a> </td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

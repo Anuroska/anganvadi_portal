@@ -1,0 +1,41 @@
+{% extends 'ICDS/index2.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>view user </title>
+</head>
+
+<body><form action="" method="get"><table class="taable table-hover" cellpadding="2">
+
+  <tr style="background-color: #b3d7ff;color: black">
+    <th  scope="col">#</th>
+    <th  scope="col">Name</th>
+    <th  scope="col">DOB</th>
+    <th  scope="col">Gender</th>
+    <th  scope="col">Phone no</th>
+    <th scope="col">email</th>
+    <th  scope="col">Address</th>
+    <th  scope="col">Category</th>
+{#    <th width="82" scope="col">Ward</th>#}
+{#    <th width="82" scope="col">Anganvadi no.</th>#}
+  </tr>
+      {% for i in data %}
+  <tr>
+    <td>{{ loop.index}}</td>
+    <td>&nbsp;{{ i['name']}}</td>
+      <td>{{ i['dob']}}</td>
+    <td>&nbsp;{{ i['gender'] }}</td>
+    <td>&nbsp;{{ i['phone_number'] }}</td>
+    <td>&nbsp;{{ i['email'] }}</td>
+    <td>{{i['address'] }}</td>
+    <td> {{i['category'] }}</td>
+{#    <td>&nbsp;{{ i['ward_number'] }}</td>#}
+  </tr>
+    {% endfor %}
+</table>
+</form>
+</body>
+</html>
+{% endblock %}

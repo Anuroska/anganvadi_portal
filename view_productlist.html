@@ -1,0 +1,39 @@
+{% extends 'USER/index3.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>view productlist </title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="get" action=""><table class="table table-hover">
+
+  <tr style="background-color: #b3d7ff;color: black">
+    <th scope="col">#</th>
+    <th scope="col">6month-3years old</th>
+    <th scope="col">3-6years old</th>
+    <th scope="col">Teenage girls</th>
+    <th scope="col">pregnent women</th>
+    <th scope="col">Lactating mothers</th>
+    <th scope="col">15-45years old</th>
+  </tr>
+   {% for i in data %}
+  <tr>
+    <td>&nbsp;{{ loop.index }}</td>
+    <td>&nbsp;{{ i['6month-3year_old' ]}}</td>
+  <td>&nbsp;{{ i['3-6year_old'] }}</td>
+  <td>&nbsp;{{ i['teenagers'] }}</td>
+  <td>&nbsp;{{ i['pregnent_women' ]}}</td>
+  <td>&nbsp;{{ i['lactating_mothers'] }}</td>
+  <td>&nbsp;{{ i['15-45years_old'] }}</td>
+
+  </tr>
+    {% endfor %}
+</table>
+
+</form>
+</body>
+</html>
+{% endblock %}

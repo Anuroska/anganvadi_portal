@@ -1,0 +1,32 @@
+{% extends 'USER/index3.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>events</title>
+</head>
+
+<body><form action="" method="get"><table class="table table-hover">
+  <tr>
+    <th colspan="4" scope="col">Events</th>
+    </tr>
+  <tr style="background-color: #b3d7ff;color: black">
+    <th scope="col">#</th>
+    <th scope="col">Event name</th>
+    <th scope="col">Picture</th>
+    <th scope="col">Date</th>
+  </tr>
+   {% for i in data %}
+  <tr>
+    <td>&nbsp;{{ loop.index }}</td>
+    <td>&nbsp;{{ i['e_name'] }}</td>
+    <td>&nbsp;<img src="{{ i['photo'] }}" height="100" width="100"> </td>
+    <td>&nbsp;{{ i['date'] }}</td>
+  </tr>
+    {% endfor %}
+</table>
+</form>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'ICDS/index2.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>view anganvadi </title>
+</head>
+
+<body><form action="" method="get"><table class="taable table-hover">
+
+  <tr style="background-color: #b3d7ff;color: black">
+    <th scope="col">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+    <th  scope="col">ward Number &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+    <th  scope="col">Anganvadi Number  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+    <th scope="col">Anganvadi Place &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </th>
+      <th scope="col">Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </th>
+      <th></th>
+      <th></th>
+  </tr>
+    {% for i in data %}
+
+  <tr>
+    <td><br>{{ loop.index }}</td>
+    <td><br>&nbsp;{{ i['ward_id'] }}</td>
+      <td><br>{{ i['anganvadi_number'] }}</td>
+      <td><br>{{ i['place'] }}</td>
+    <td><br>{{ i['Email' ]}}</td>
+
+   <td><br><a href="/view_user2/{{ i['anganvadi_id'] }}"  class="btn btn-outline-primary" >  User</a><br>
+
+
+  <a href="/view_record2/{{ i['anganvadi_id'] }}"  class="btn btn-outline-primary" >  Record</a>
+
+  <a href="/view_productlist2/{{ i['anganvadi_id'] }}" class="btn btn-outline-primary" >  Products</a>
+
+  <a href="/view_service2/{{ i['anganvadi_id'] }}"  class="btn btn-outline-primary" >  Services</a>
+
+   <a href="/view_attendence3/{{ i['anganvadi_id'] }}"  class="btn btn-outline-primary" >  Attendence</a>
+
+  </tr>
+     {% endfor %}
+</table>
+</form>
+</body>
+</html>
+{% endblock %}

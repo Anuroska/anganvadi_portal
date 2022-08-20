@@ -1,0 +1,94 @@
+{% extends 'ANGANVADI/index1.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>User registration</title>
+</head>
+
+<body><form action="" method="post"><table class="table table-hover">
+
+  <tr>
+    <th  scope="row">Name</th>
+    <td ><label for="textfield"></label>
+      <input type="text" name="textfield"  required id="textfield" value="{{ data['name'] }}" class="form-control"/></td>
+  </tr>
+  <tr>
+    <th scope="row">DOB</th>
+    <td><label for="textfield2"></label>
+      <input type="date" name="textfield2" required id="textfield2" value="{{ data['dob'] }}"  class="form-control"/></td>
+  </tr>
+  <tr>
+    <th scope="row">Gender</th>
+    <td><input type="radio" name="radio1" id="radio1" value="male" {% if data['gender']=='male' %} checked{% endif %}/>
+      <label for="radio1">Male</label><br />
+        <input type="radio" name="radio1" id="radio2" value="female" {% if data['gender']=='female' %} checked{% endif %}/>
+      <label for="radio2">Female</label><br />
+      <input type="radio" name="radio1" id="radio3" value="others" {% if data['gender']=='others' %} checked{% endif %}/>
+      <label for="radio3">Others</label></td>
+  </tr>
+  <tr>
+    <th scope="row">Phone Number</th>
+    <td><label for="textfield3"></label>
+      <input type="number" name="textfield3" required id="textfield3" value="{{ data['phone_number'] }}" class="form-control"/></td>
+  </tr>
+  
+  
+  <tr>
+  <th scope="row">email</th>
+  <td><label for="textfield5"></label>
+    <input type="email" name="textfield5" required id="textfield5" value="{{ data['email'] }}"class="form-control"/></td>
+  <tr>
+    <th scope="row">Address</th>
+    <td><label for="textarea"></label>
+      <textarea name="textarea" required id="textarea" cols="45" rows="5" class="form-control">{{ data['address'] }} </textarea></td>
+  </tr>
+     <tr>
+    <th scope="row">Ward </th>
+    <td><label for="select"></label>
+      <select name="select" id="select" class="form-control">
+      <option>--select--</option>
+          {% for i in data1 %}
+          <option value="{{  i['ward_id'] }}"  {% if  i['ward_id']==data['ward_id'] %} selected {% endif %}> {{ i['ward_number'] }} </option>
+          {% endfor %}
+      </select></td>
+  </tr>
+
+  <tr>
+      <th scope="row">Category</th>
+    <td><p>
+        <input type="radio" name="radio" id="radio4" value="6 month-3 years old" {% if data['category']=='6 month-3 years old' %} checked{% endif %}/>
+        <label for="radio4"> 6 month-3 years old</label>
+      </p>
+      <p>
+        <input type="radio" name="radio" id="radio5" value="3-6 years old" {% if data['category']=='3-6 years old' %} checked{% endif %}/>
+        <label for="radio5"> 3-6 years old</label>
+     </p>
+      <p>
+        <input type="radio" name="radio" id="radio6" value="Pregnent women" {% if data['category']=='Pregnent women' %} checked{% endif %}/>
+        <label for="radio6">Pregnent women</label>
+        </p>
+      <p>
+        <input type="radio" name="radio" id="radio7" value="Lactating mothers" {% if data['category']=='Lactating mothers' %} checked{% endif %}/>
+        <label for="radio7">Lactating mothers(0-6 month)</label>
+      </p>
+      <p>
+        <input type="radio" name="radio" id="radio8" value="Teenage girls" {% if data['category']=='Teenage girls' %} checked{% endif %}/>
+        <label for="radio8">Teenage girls</label>
+        </p>
+      <p>
+        <input type="radio" name="radio" id="radio9" value="15-45 years old women" {% if data['category']=='15-45 years old women' %} checked{% endif %}/>
+        <label for="radio9">15-45 years old women</label>
+      </p></td>
+  </tr>
+{# <input type="radio" name="radio" id="radio6" value="Pregnent women" />#}
+{#        <label for="radio6">Pregnent women</label>#}
+  <tr>
+    <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="Update" class="btn btn-outline-primary" /></th>
+    </tr>
+</table>
+</form>
+</body>
+</html>
+{% endblock %}

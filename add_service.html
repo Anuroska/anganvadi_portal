@@ -1,0 +1,77 @@
+{% extends 'ANGANVADI/index1.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> add service</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table   class="table table-hover">
+    <tr>
+      <th  scope="row">Services</th>
+      <td ><p>
+
+          <input type="checkbox" name="CheckboxGroup1" value=" Weight cheking(0-3years old)" id="CheckboxGroup1_0" />
+          <label for="CheckboxGroup1_0"> Weight cheking(0-3years old)</label>
+        <br />
+
+          <input type="checkbox" name="CheckboxGroup1" value="Weight cheking(3-6years old)" id="CheckboxGroup1_1" />
+          <label for="CheckboxGroup1_1">Weight cheking(3-6 years old)</label>
+        <br />
+
+          <input type="checkbox" name="CheckboxGroup1" value="Vaccinations" id="CheckboxGroup1_2" />
+          <label for="CheckboxGroup1_2">Vaccinations</label>
+        <br />
+      </p></td>
+    </tr>
+    <tr>
+      <th scope="row">Meetings</th>
+      <td><p>
+
+          <input type="checkbox" name="CheckboxGroup2" value="Seemantha sangamam" id="CheckboxGroup2_0" />
+          <label for="CheckboxGroup2_0">Seemantha sangamam</label>
+        <br />
+
+          <input type="checkbox" name="CheckboxGroup2" value="Kunjoonu" id="CheckboxGroup2_1" />
+          <label for="CheckboxGroup2_1">Kunjoonu</label>
+        <br />
+
+          <input type="checkbox" name="CheckboxGroup2" value="Varna sangamam" id="CheckboxGroup2_2" />
+          <label for="CheckboxGroup2_2">Varna sangamam</label>
+        <br />
+
+          <input type="checkbox" name="CheckboxGroup2" value="Nirmala sangamam" id="CheckboxGroup2_3" />
+          <label for="CheckboxGroup2_3">Nirmala sangamam</label>
+        <br/>
+
+          <input type="checkbox" name="CheckboxGroup2" value="Dhambathi sangamam" id="CheckboxGroup2_4" />
+              <label for="CheckboxGroup2_4">Dhambathi sangamam</label>
+          <br />
+      </p></td>
+    </tr>
+      <tr>
+    <th scope="row">Date</th>
+    <td ><label for="textfield"></label>
+      <input type="text" name="textfield" required id="textfield" class="form-control"/></td>
+  </tr>
+      <tr>
+    <th scope="row">Time</th>
+    <td ><label for="textfield2"></label>
+      <input type="text" name="textfield2" required id="textfield2" class="form-control"/></td>
+  </tr>
+      <tr>
+    <th scope="row">Place</th>
+    <td ><label for="textfield3"></label>
+      <input type="text" name="textfield3" required id="textfield3" class="form-control"/></td>
+  </tr>
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="Submit" class="btn btn-outline-primary"/></th>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

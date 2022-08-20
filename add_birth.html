@@ -1,0 +1,55 @@
+{% extends 'ANGANVADI/index1.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>birth register</title>
+</head>
+
+<body><form action="" method="post"><table  class="table table-hover">
+  <tr>
+    <th colspan="2" scope="row">BIRTH REGISTER</th>
+    </tr>
+  <tr>
+    <th scope="row">Name</th>
+    <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" class="form-control"/></td>
+  </tr>
+  <tr>
+    <th scope="row">DOB</th>
+    <td><label for="textfield2"></label>
+      <input type="date" name="textfield2" required id="textfield2"  class="form-control"/></td>
+  </tr>
+     <tr>
+    <th scope="row">Gender</th>
+    <td><input type="radio" name="radio" id="radio1" value="Male" />
+        <label for="radio1">Male</label><br />
+        <input type="radio" name="radio" id="radio2" value="Female" />
+        <label for="radio2">Female</label><br />
+        <input type="radio" name="radio" id="radio3" value="Others" />
+      <label for="radio3">Others</label></td>
+  </tr>
+  <tr>
+    <th scope="row">Father's name</th>
+    <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" class="form-control"/></td>
+  </tr>
+  <tr>
+    <th scope="row">Mother's name</th>
+    <td><label for="textfield4"></label>
+      <input type="text" name="textfield4" id="textfield4" class="form-control"/></td>
+  </tr>
+  <tr>
+    <th scope="row">Address</th>
+    <td><label for="textarea"></label>
+      <textarea name="textarea" id="textarea" cols="45" rows="5"class="form-control"></textarea></td>
+  </tr>
+  <tr>
+    <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="Submit"  class="btn btn-outline-primary"/></th>
+    </tr>
+</table>
+</form>
+</body>
+</html>
+{% endblock %}
